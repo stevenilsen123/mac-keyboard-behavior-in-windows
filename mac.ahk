@@ -43,6 +43,10 @@ Ctrl & Tab::AltTab
 ^Right::Send, {End}
 ^Up::Send, ^{Home}
 ^Down::Send, ^{End}
++^Left::Send, +{Home}
++^Right::Send, +{End}
++^Up::Send, +^{Home}
++^Down::Send, +^{End}
 #Left::
     Suspend, On
     Send, ^{Left}
@@ -51,5 +55,15 @@ return
 #Right::
     Suspend, On
     Send, ^{Right}
+    Suspend, Off
+return
++#Left::
+    Suspend, On
+    Send, +^{Left}
+    Suspend, Off
+return
++#Right::
+    Suspend, On
+    Send, +^{Right}
     Suspend, Off
 return
