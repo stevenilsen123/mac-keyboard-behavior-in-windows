@@ -1,4 +1,4 @@
-; This script assumes that Alt and Ctrl characters have been swapped using remapkey.exe
+; This script assumes that Alt and Ctrl characters have been swapped using a third-party tool
 
 ; -----KEY GUIDE-----
 ; # Win. (the key with the Windows logo) therefore `Send #e` would hold down Win and then press E.
