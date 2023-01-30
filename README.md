@@ -3,16 +3,15 @@ This [AutoHotKey script](./mac.ahk) seeks to deliver all the **superior** MacOS 
 
 ## Prerequisites
 1. [AutoHotKey](https://www.autohotkey.com/) installed on your PC
-2. **Remap your Ctrl and Alt keys** using a third party tool. I recommend using `Microsoft Power Toys` which can be installed from the Microsoft Store.
+2. Swap your Ctrl and Alt keys using [Microsoft Power Toys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD?hl=en-us&gl=us)
 
-![PowerToys.png](./PowerToys.png)
+![PowerToys_KeyboardManager.png](./PowerToys_KeyboardManager.png)
 
----
+3. Optional (but highly recommended): Turn on PowerToys Run and assign it to Ctrl+Space (Since you swapped your Ctrl and Alt keys in the previous step)
 
-## Recommended third party software
-Some fundamental MacOS features, such as Spotlight search, can't be replicated in Windows without some additional software. Below I have listed some tools you might want to consider adding with their corresponding MacOS keyboard shortcuts. These tools are optional, but highly recommended:
-* **Command–Space bar**: I recommend [Wox](https://github.com/Wox-launcher/Wox) for an Alfred-like launcher and search experience.
-* **Shift-Command-5**: I recommend [Monosnap](https://monosnap.com/) for screenshots.
+![PowerToys_Run](PowerToys_Run.png)
+
+4. Optional: Install [Monosnap](https://monosnap.com/) for screenshots.
 
 ---
 
@@ -50,7 +49,7 @@ This script seeks to implement all shortcuts listed on the official [MacOS keybo
 - [x] Command-W: Close the front window.
 - [ ] Option-Command-W: Close all windows of the front app.
 - [ ] Option-Command-Esc: Force quit an app.
-- [x] Command–Space bar: I recommend [Wox](https://github.com/Wox-launcher/Wox) for an Alfred-like launcher and search experience.
+- [x] Command–Space bar: I recommend PowerToys Run. See [Prerequisites](#prerequisites) section.
 - [ ] Control–Command–Space bar: Show the Character Viewer, from which you can choose emoji and other symbols.
 - [ ] Control-Command-F: Use the app in full screen, if supported by the app.
 - [ ] Space bar: Use Quick Look to preview the selected item.
