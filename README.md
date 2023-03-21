@@ -23,6 +23,12 @@ This [AutoHotKey script](./mac.ahk) seeks to deliver all the **superior** MacOS 
 5. Run the file by double-clicking it in Windows Explorer (click Yes when asked to grant admin rights to the script; this is required).
 
 ---
+## Buy me a coffee (optional) ☕
+[<img src="qr_Ko-fiDonate.png" alt="Donate" width="200"/>](https://ko-fi.com/stephennilsen)
+
+## https://ko-fi.com/stephennilsen
+
+---
 ## Available shortcuts in this release
 This script seeks to implement all shortcuts listed on the official [MacOS keyboard shortcuts page](https://support.apple.com/en-us/HT201236). The list below is current with that page as of **01/26/2023**. Items that are checked off have been implemented in the latest release.
 
