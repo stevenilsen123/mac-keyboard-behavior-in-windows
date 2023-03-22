@@ -20,7 +20,7 @@ This [AutoHotKey script](./mac.ahk) seeks to deliver all the **superior** MacOS 
 2. Create a new `mac.ahk` file in the location of your choice. I recommend `%userprofile%/Documents/AutoHotKey/mac.ahk`.
 3. Open your newly created file in a text editor such as Notepad.
 4. Copy the contents of this [mac.ahk](./mac.ahk) into the file you created and save changes.
-5. Run the file by double-clicking it in Windows Explorer (click Yes when asked to grant admin rights to the script; this is required).
+5. Run the file by double-clicking it in Windows Explorer.
 
 ---
 ## Buy me a coffee (optional) ☕
