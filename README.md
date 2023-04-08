@@ -1,18 +1,15 @@
 # MacOS Keyboard Behavior in Windows
-This [AutoHotKey script](./mac.ahk) seeks to deliver all the **superior** MacOS keyboard behavior you love in Windows!
+This [AutoHotKey script](mac.ahk) seeks to deliver all the **superior** MacOS keyboard behavior you love in Windows!
 
 ## Prerequisites
 1. [AutoHotKey](https://www.autohotkey.com/) installed on your PC
 2. Swap your Ctrl and Alt keys using [Microsoft Power Toys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD?hl=en-us&gl=us)
 
-![PowerToys_KeyboardManager.png](./PowerToys_KeyboardManager.png)
+![PowerToys_KeyboardManager.png](PowerToys_KeyboardManager.png)
 
-<div class="note">
-<h3><b>NOTE</b></h3>
-If your machine is restricted by an admin and you are unable to install Power Toys from the Microsoft store link above, you can try installing the per-user scope version of Power Toys from the <a class="noteLink" href=https://github.com/microsoft/PowerToys/releases>Power Toys GitHub</a>.
-<img src="./PowerToys_User_Download.png">
-</div>
-<br>
+> ### **NOTE**
+> If your machine is restricted by an admin and you are unable to install Power Toys from the Microsoft store link above, you can try installing the per-user scope version of Power Toys from the [Power Toys GitHub](https://github.com/microsoft/PowerToys/releases)
+> ![PowerToys_User_Download.png](PowerToys_User_Download.png)
 
 3. Optional (but highly recommended): Turn on PowerToys Run and assign it to Ctrl+Space (Since you swapped your Ctrl and Alt keys in the previous step)
 
@@ -26,7 +23,7 @@ If your machine is restricted by an admin and you are unable to install Power To
 1. [Prerequisites](#prerequisites) first!
 2. Create a new `mac.ahk` file in the location of your choice. I recommend `%userprofile%/Documents/AutoHotKey/mac.ahk`.
 3. Open your newly created file in a text editor such as Notepad.
-4. Copy the contents of this [mac.ahk](./mac.ahk) into the file you created and save changes.
+4. Copy the contents of this [mac.ahk](mac.ahk) into the file you created and save changes.
 5. Run the file by double-clicking it in Windows Explorer.
 
 ---
@@ -206,21 +203,3 @@ The behavior of these shortcuts may vary with the app you're using.
 - [ ] Shift–Command–Minus sign (-): Decrease the size of the selected item.
 - [ ] Shift–Command–Plus sign (+): Increase the size of the selected item. Command–Equal sign (=) performs the same function.
 - [ ] Shift–Command–Question mark (?): Open the Help menu.
-
-<style>
-    .note{
-        background: #FFB74D;
-        color: #424242;
-        border-radius: 1em;
-        padding: 1em;
-    }
-    a.noteLink:link{
-        color:#1976D2
-    }
-    a.noteLink:hover{
-        color:#2196F3
-    }
-    a.noteLink:visited{
-        color:#7B1FA2
-    }
-</style>
