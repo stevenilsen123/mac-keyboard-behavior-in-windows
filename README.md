@@ -1,4 +1,8 @@
 # MacOS Keyboard Behavior in Windows
+
+![logo.png](logo.png)
+
+<br><br>
 This [AutoHotKey script](mac.ahk) seeks to deliver all the **superior** MacOS keyboard behavior you love in Windows!
 
 ## Prerequisites
