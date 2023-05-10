@@ -6,8 +6,9 @@
 This [AutoHotKey script](mac.ahk) seeks to deliver all the **superior** MacOS keyboard behavior you love in Windows!
 
 ## Prerequisites
-1. [AutoHotKey](https://www.autohotkey.com/) installed on your PC
-2. Swap your Ctrl and Alt keys using [Microsoft Power Toys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD?hl=en-us&gl=us)
+1. A Windows-style keyboard; **this solution is not designed to work with a Mac keyboard**
+2. [AutoHotKey](https://www.autohotkey.com/) installed on your PC
+3. Swap your Ctrl and Alt keys using [Microsoft Power Toys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD?hl=en-us&gl=us)
 
 ![PowerToys_KeyboardManager.png](PowerToys_KeyboardManager.png)
 
