@@ -2,6 +2,25 @@
 Mac keyboard shortcuts
 By pressing certain key combinations, you can do things that normally need a mouse, trackpad, or other input device.
 
+Using keyboard shortcuts
+
+Common shorcuts like cut, copy, paste
+
+Sleep, log out, and shut down shortcuts
+
+Finder and system shortcuts
+
+Document shortcuts
+
+Accessibility shortcuts
+
+Other shortcuts
+
+Learn more
+
+ 
+
+Using keyboard shortcuts
 To use a keyboard shortcut, press and hold one or more modifier keys and then press the last key of the shortcut. For example, to use Command-C (copy), press and hold the Command key, then the C key, then release both keys. Mac menus and keyboards often use symbols for certain keys, including modifier keys:
 
 Command (or Cmd) ⌘
@@ -11,11 +30,11 @@ Control (or Ctrl) ⌃
 Caps Lock ⇪
 Fn 
 
-On keyboards made for Windows PCs, use the Alt key instead of Option, and the Windows logo key instead of Command.
+On keyboards made for Windows PCs, use the Alt key instead of Option, and the Ctrl key or Windows logo key instead of Command.
 
 Some keys on some Apple keyboards have special symbols and functions, such as for display brightness , keyboard brightness , and more. If these functions aren't available on your keyboard, you might be able to reproduce some of them by creating your own keyboard shortcuts. To use these keys as F1, F2, F3, or other standard function keys, combine them with the Fn key.
 
-
+ 
 
 Cut, copy, paste, and other common shortcuts
 Command-X: Cut the selected item and copy it to the Clipboard.
@@ -196,26 +215,59 @@ Shift–Command–Plus sign (+): Increase the size of the selected item. Command
 Shift–Command–Question mark (?): Open the Help menu.
 
 
-Other shortcuts
-For more shortcuts, check the shortcut abbreviations shown in the menus of your apps. Every app can have its own shortcuts, and shortcuts that work in one app might not work in another. 
-
 Accessibility shortcuts
+To use these vision shortcuts, first choose Apple menu  > System Settings (or System Preferences), then click Keyboard. Click Keyboard Shortcuts, select Accessibility on the left, then select “Invert colors” and "Contrast" on the right.
+
+Control-Option-Command-8: Invert colors.
+Control-Option-Command-Comma (,) and Control-Option-Command-Period (.): Reduce contrast and increase contrast.
+Use these shortcuts to change keyboard focus. To use some of these shortcuts, first choose Apple menu  > System Settings (or System Preferences), then click Keyboard. Click Keyboard Shortcuts, select Keyboard on the left, then select the shortcut's setting on the right.
+
+Control-F2 or Fn-Control-F2: Move focus to the menu bar. You can then use the arrow keys to navigate the menu, press Return to open a selected menu or choose a selected menu item, or type the menu item's name to jump to that item in the selected menu.
+Control-F3 or Fn-Control-F3: Move focus to the Dock.
+Control-F4 or Fn-Control-F4: Move focus to the active window or next window.
+Control-F5 or Fn-Control-F5: Move focus to the window toolbar.
+Control-F6 or Fn-Control-F6: Move focus to the floating window.
+Control-Shift-F6: Move focus to the previous panel.
+Control-F7 or Fn-Control-F7: Change the way Tab moves focus—between navigation of all controls on the screen, or only text boxes and lists.
+Control-F8 or Fn-Control-F8: Move focus to the status menu in the menu bar
+Command–Grave accent (`): Activate the next open window in the front app.
+Shift–Command–Grave accent (`): Activate the previous open window in the front app
+Option–Command–Grave accent (`): Move the focus to the window drawer.
+Tab and Shift-Tab: Move to next control, move to previous control.
+Control-Tab: Move to the next control when a text field is selected.
+Control-Shift-Tab: Move to the previous grouping of controls.
+Arrow keys: Move to the adjacent item in a list, tab group, or menu, or move sliders and adjusters (Up Arrow to increase values, Down Arrow to decrease values)
+Control–Arrow keys: Move to a control adjacent to the text field.
+Other accessibility shortcuts:
+
+Option-Command-F5 or triple-press Touch ID: Show the Accessibility Shortcuts panel.
+VoiceOver commands
+Zoom in or out
+Use Mouse Keys to control the pointer with your keyboard
+If you're using VoiceOver, you might need to make VoiceOver ignore the next key press before you can use some of the shortcuts in this article.
+
+ 
+
+Other shortcuts
 Safari shortcuts
 Spotlight shortcuts
+Mail shortcuts
+Photos shortcuts
+Disk Utility shortcuts
+Preview shortcuts
+Apple Music shortcuts
 Startup shortcuts
-Apple Music shortcuts: Choose Help > Keyboard shortcuts from the menu bar in the Music app.
-Other shortcuts: Choose Apple menu > System Preferences, click Keyboard, then click Shortcuts.
+For more shortcuts, check the shortcut abbreviations shown in the menus of your apps. Every app can have its own shortcuts, and shortcuts that work in one app might not work in another. 
 
 
 Learn more
-Type emoji, accents, and symbols
+Use emoji and symbols
 Create your own shortcuts and resolve conflicts between shortcuts
 Change the behavior of the function keys or modifier keys
 Use a spoken command for a keyboard shortcut
-Published Date: October 24, 2022
+Published Date: May 31, 2023
 Helpful?YesNo
 Start a discussion in Apple Support Communities
-Ask other users about this article
 Ask other users about this article
 See all questions on this article 
 Apple Footer

@@ -7,9 +7,10 @@
 ; ! Ctrl (because of remapkey). For example, `Send, ^!a` would press Ctrl+Alt+A, and Send, ^{Home} would send Ctrl+Home. Note: ^A produces a different effect in some programs than ^a. This is because ^A presses Ctrl+Shift+A and ^a presses Ctrl+A. If in doubt, use lowercase.Sends Ctrl. For example, Send, ^!a would press Ctrl+Alt+A, and Send, ^{Home} would send Ctrl+Home. Note: ^A produces a different effect in some programs than ^a. This is because ^A presses Ctrl+Shift+A and ^a presses Ctrl+A. If in doubt, use lowercase.
 ; & An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
 
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Uncomment to enable warnings to assist with detecting common errors.
-SendMode("Input")  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Uncomment for key history
 ; #InstallKeybdHook
@@ -17,93 +18,69 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 
 ; App and tab switching
 Ctrl & Tab::AltTab
-!Tab::Send("^{Tab}")
+!Tab::Send ^{Tab}
 
 ; Quit the active app
-^q::Send("!{f4}")
+^q::Send, !{f4}
 
 ; Insertion point movement
 ^Left::
-{
-    Suspend(true)
-    Send("{Home}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, {Home}
+    Suspend, Off
+return
 ^Right::
-{
-    Suspend(true)
-    Send("{End}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, {End}
+    Suspend, Off
+return
 ^Up::
-{
-    Suspend(true)
-    Send("^{Home}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, ^{Home}
+    Suspend, Off
+return
 ^Down::
-{
-    Suspend(true)
-    Send("^{End}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, ^{End}
+    Suspend, Off
+return
 +^Left::
-{
-    Suspend(true)
-    Send("+{Home}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, +{Home}
+    Suspend, Off
+return
 +^Right::
-{
-    Suspend(true)
-    Send("+{End}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, +{End}
+    Suspend, Off
+return
 +^Up::
-{
-    Suspend(true)
-    Send("+^{Home}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, +^{Home}
+    Suspend, Off
+return
 +^Down::
-{
-    Suspend(true)
-    Send("+^{End}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, +^{End}
+    Suspend, Off
+return
 #Left::
-{
-    Suspend(true)
-    Send("^{Left}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, ^{Left}
+    Suspend, Off
+return
 #Right::
-{
-    Suspend(true)
-    Send("^{Right}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, ^{Right}
+    Suspend, Off
+return
 +#Left::
-{
-    Suspend(true)
-    Send("+^{Left}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, +^{Left}
+    Suspend, Off
+return
 +#Right::
-{
-    Suspend(true)
-    Send("+^{Right}")
-    Suspend(false)
-    return
-}
+    Suspend, On
+    Send, +^{Right}
+    Suspend, Off
+return
