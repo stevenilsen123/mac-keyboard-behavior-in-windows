@@ -147,3 +147,64 @@ Ctrl & Tab::AltTab
     Suspend(false)
     return
 }
+
+; other shortcuts
++Enter::Send("^{Enter}") ; Shift + Enter to create newline after the current line
+^d:: ; Command + D to duplicate current line
+{
+    ; Save current clipboard content
+    clipboardBackup := ClipboardAll()
+
+    ; Select the entire current line
+    Send("{Home}") ; Move to the start of the line
+    Send("+{End}") ; Shift + End to select the entire line
+
+    ; Copy the selected line
+    Send("^c") ; Ctrl + C
+
+    ; Give the clipboard a moment to populate
+    ClipWait(1)
+
+    ; Move to the next line and paste
+    Send("{End}") ; Move to the end of the current line
+    Send("{Enter}") ; Enter to go to next line
+    Send("^v") ; Ctrl + V to paste
+
+    ; Restore original clipboard content
+    A_Clipboard := clipboardBackup
+    return
+}
+; remap \ and | to enter and shift enter
+; if alt is pressed, it treats the keys as the original ones
+;\::
+;{
+;    if GetKeyState("Ctrl", "P") ; If Alt is pressed
+;        Send("\") ; Send original key
+;    else
+;        Send("{Enter}")
+;    return
+;}
+;+\::
+;{
+;    if GetKeyState("Ctrl", "P") ; If Alt is pressed
+;        Send("|") ; Send original key for Shift + \
+;    else
+;        Send("^{Enter}") ; This represents Shift + Enter
+;    return
+;}
+\::Send("{Enter}")
++\::Send("^{Enter}")
+!\::
+{
+    Suspend(true)
+    Send("\")
+    Suspend(false)
+    return
+}
+!+\::
+{
+    Suspend(true)
+    Send("|")
+    Suspend(false)
+    return
+}
