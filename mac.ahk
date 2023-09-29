@@ -51,6 +51,25 @@ Ctrl & Tab::AltTab
     Suspend(false)
     return
 }
+#Backspace:: ; Opt + Backspace to delete the word to the left of cursor
+{
+    Suspend(true)
+
+    if WinActive("ahk_class ConsoleWindowClass") ; CMD window class
+    {
+        Send("^{BS}")
+    }
+    else
+    {
+        Send("{Shift Down}") ; Begin selection
+        Send("^{Left}") ; Move to the start of the line, thereby selecting everything from the cursor to the start of the line
+        Send("{Shift Up}") ; End selection
+        Send("{Backspace}") ; Delete the selected content
+    }
+
+    Suspend(false)
+    return
+}
 +^Left::
 {
     Suspend(true)
@@ -90,6 +109,27 @@ Ctrl & Tab::AltTab
 {
     Suspend(true)
     Send("^{Right}")
+    Suspend(false)
+    return
+}
+^Backspace:: ; Cmd + Backspace to delete whole line left of the cursor
+{
+    Suspend(true)
+
+    if WinActive("ahk_class ConsoleWindowClass") ; CMD window class
+    ; switch keyboard layout will also be activated if you use windows 10/11
+    ; you should put the shortcut to sth like alt + shift or disable it
+    {
+        Send("^{BS}")  ; This sends the original Ctrl+Backspace
+    }
+    else
+    {
+        Send("{Shift Down}") ; Begin selection
+        Send("{Home}") ; Move to the start of the line, thereby selecting everything from the cursor to the start of the line
+        Send("{Shift Up}") ; End selection
+        Send("{Backspace}") ; Delete the selected content
+    }
+
     Suspend(false)
     return
 }
