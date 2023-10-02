@@ -22,6 +22,22 @@ Ctrl & Tab::AltTab
 ; Quit the active app
 ^q::Send("!{f4}")
 
+; windows snipping tool shortcuts to mac's screen capture
+^+3::
+{
+    Suspend(true)
+    Send("{PrintScreen}")
+    Suspend(false)
+    return
+}
+^+4::
+{
+    Suspend(true)
+    Send("#+s")
+    Suspend(false)
+    return
+}
+
 ; Insertion point movement
 ^Left::
 {
@@ -48,6 +64,25 @@ Ctrl & Tab::AltTab
 {
     Suspend(true)
     Send("^{End}")
+    Suspend(false)
+    return
+}
+#Backspace:: ; Opt + Backspace to delete the word to the left of cursor
+{
+    Suspend(true)
+
+    if WinActive("ahk_class ConsoleWindowClass") ; CMD window class
+    {
+        Send("^{BS}")
+    }
+    else
+    {
+        Send("{Shift Down}") ; Begin selection
+        Send("^{Left}") ; Move to the start of the line, thereby selecting everything from the cursor to the start of the line
+        Send("{Shift Up}") ; End selection
+        Send("{Backspace}") ; Delete the selected content
+    }
+
     Suspend(false)
     return
 }
@@ -93,6 +128,27 @@ Ctrl & Tab::AltTab
     Suspend(false)
     return
 }
+^Backspace:: ; Cmd + Backspace to delete whole line left of the cursor
+{
+    Suspend(true)
+
+    if WinActive("ahk_class ConsoleWindowClass") ; CMD window class
+    ; switch keyboard layout will also be activated if you use windows 10/11
+    ; you should put the shortcut to sth like alt + shift or disable it
+    {
+        Send("^{BS}")  ; This sends the original Ctrl+Backspace
+    }
+    else
+    {
+        Send("{Shift Down}") ; Begin selection
+        Send("{Home}") ; Move to the start of the line, thereby selecting everything from the cursor to the start of the line
+        Send("{Shift Up}") ; End selection
+        Send("{Backspace}") ; Delete the selected content
+    }
+
+    Suspend(false)
+    return
+}
 +#Left::
 {
     Suspend(true)
@@ -104,6 +160,67 @@ Ctrl & Tab::AltTab
 {
     Suspend(true)
     Send("+^{Right}")
+    Suspend(false)
+    return
+}
+
+; other shortcuts
++Enter::Send("^{Enter}") ; Shift + Enter to create newline after the current line
+^d:: ; Command + D to duplicate current line
+{
+    ; Save current clipboard content
+    clipboardBackup := ClipboardAll()
+
+    ; Select the entire current line
+    Send("{Home}") ; Move to the start of the line
+    Send("+{End}") ; Shift + End to select the entire line
+
+    ; Copy the selected line
+    Send("^c") ; Ctrl + C
+
+    ; Give the clipboard a moment to populate
+    ClipWait(1)
+
+    ; Move to the next line and paste
+    Send("{End}") ; Move to the end of the current line
+    Send("{Enter}") ; Enter to go to next line
+    Send("^v") ; Ctrl + V to paste
+
+    ; Restore original clipboard content
+    A_Clipboard := clipboardBackup
+    return
+}
+; remap \ and | to enter and shift enter
+; if alt is pressed, it treats the keys as the original ones
+;\::
+;{
+;    if GetKeyState("Ctrl", "P") ; If Alt is pressed
+;        Send("\") ; Send original key
+;    else
+;        Send("{Enter}")
+;    return
+;}
+;+\::
+;{
+;    if GetKeyState("Ctrl", "P") ; If Alt is pressed
+;        Send("|") ; Send original key for Shift + \
+;    else
+;        Send("^{Enter}") ; This represents Shift + Enter
+;    return
+;}
+\::Send("{Enter}")
++\::Send("^{Enter}")
+!\::
+{
+    Suspend(true)
+    Send("\")
+    Suspend(false)
+    return
+}
+!+\::
+{
+    Suspend(true)
+    Send("|")
     Suspend(false)
     return
 }
