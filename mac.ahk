@@ -22,6 +22,22 @@ Ctrl & Tab::AltTab
 ; Quit the active app
 ^q::Send("!{f4}")
 
+; windows snipping tool shortcuts to mac's screen capture
+^+3::
+{
+    Suspend(true)
+    Send("{PrintScreen}")
+    Suspend(false)
+    return
+}
+^+4::
+{
+    Suspend(true)
+    Send("#+s")
+    Suspend(false)
+    return
+}
+
 ; Insertion point movement
 ^Left::
 {
