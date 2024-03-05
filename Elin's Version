@@ -1,0 +1,99 @@
+
+#NoEnv  ; Performance and compatibility with future AutoHotkey releases
+#UseHook
+; #Warn  ; Enable warnings to assist with detecting common errors
+SendMode Input
+#MaxThreads 255
+#MaxThreadsPerHotkey 255
+
+; Pause/Resume script execution
+Pause::
+Suspend ;Toggle script suspension
+Pause,, 1 ;Pause script with a 1ms delay
+Return
+
+; Remap Ctrl to Alt and Alt to Ctrl
+#IfWinActive ; No parameters means "always"
+SetKeyDelay, -1 ; Set key delay to minimal
+
+<^Tab::
+    Send {LCtrl down}{Tab}
+    Keywait LAlt
+    Send {LCtrl up}
+return
+
+; Remap Alt + Tab to AltTab without blocking Windows Alt behavior
+~<^Tab::AltTab
+
+; Universal shortcuts mimicking macOS behavior
+$!x::Send ^x ; Cut
+$!c::Send ^c ; Copy
+$!v::Send ^v ; Paste
+$!s::Send ^s ; Save
+$!a::Send ^a ; Select All
+$!z::Send ^z ; Undo
+$!+z::Send ^y ; Redo
+$!w::Send ^w ; Close window/tab
+$!f::Send ^f ; Find
+$!n::Send ^n ; New
+$!q::HoldToQuit() ; Hold Alt + Q for 3 seconds to quit
+$!r::Send ^{f5} ; Reload/Refresh
+$!m::Send {LWin Down}{Down}{LWin Up} ; Minimize window
+$!`::Send {Ctrl Down}{Shift Down}{Tab}{Shift Up}{Ctrl Up} ; Switch windows
+
+; Quick Switch Tab shortcuts
+$!1::Send ^1
+$!2::Send ^2
+$!3::Send ^3
+$!4::Send ^4
+$!5::Send ^5
+$!6::Send ^6
+$!7::Send ^7
+$!8::Send ^8
+$!9::Send ^9
+$!0::Send ^0
+
+; Chrome shortcuts
+#IfWinActive ahk_exe chrome.exe
+$!t::Send ^t ; New tab
+$!+t::Send ^+t ; Reopen closed tab
+$!+]::Send {Ctrl Down}{Tab Down}{Tab Up}{Ctrl Up} ; Next tab
+$!+[::Send {Ctrl Down}{Shift Down}{Tab Down}{Tab Up}{Shift Up}{Ctrl Up} ; Previous tab
+$!l::Send ^l ; Focus address bar
+$!LButton::Send ^{LButton} ; 
+#IfWinActive
+
+; Navigation and selection shortcuts
+$!Left::Send {Home} ; Move to beginning of line
+$!Right::Send {End} ; Move to end of line
+$!Up::Send {Lctrl down}{Home}{Lctrl up} ; Move to beginning of document
+$!Down::Send {Lctrl down}{End}{Lctrl up} ; Move to end of document
+
+$#Left::Send {ctrl down}{Left}{ctrl up} ; Move one word left
+$#Right::Send {ctrl down}{Right}{ctrl up} ; Move one word right
+$#+Left::Send {ctrl down}{shift down}{Left}{shift up}{ctrl up} ; Select one word left
+$#+Right::Send {ctrl down}{shift down}{Right}{shift up}{ctrl up} ; Select one word right
+
+$!+Left::Send {shift down}{Home}{shift up} ; Select to beginning of line
+$!+Right::Send {shift down}{End}{shift up} ; Select to end of line
+$!+Up::Send {Ctrl Down}{shift down}{Home}{shift up}{Ctrl Up} ; Select to beginning of document
+$!+Down::Send {Ctrl Down}{shift down}{End}{shift up}{Ctrl Up} ; Select to end of document
+
+!BS::Send {LShift down}{Home}{LShift Up}{Del} ; Delete word before caret
+
+; Ctrl + Backspace specific to File Explorer
+#IfWinActive ahk_class CabinetWClass ; File Explorer
+    ^Backspace::Send {Delete}
+#IfWinActive
+
+; Function to hold Alt + Q for 3 seconds before quitting
+HoldToQuit() {
+    StartTime := A_TickCount
+    While (A_TickCount - StartTime < 3000) {
+        if (!GetKeyState("q", "P") or !GetKeyState("Alt", "P"))
+            return
+        Sleep, 10
+    }
+    Send !{f4}
+    return
+}
